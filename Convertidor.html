@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+<script type="text/javascript">
+function input1()
+{
+     temp = document.getElementById("chose1").value;
+	 temp2=document.getElementById("chose2").value;
+
+    if(temp=="C" && temp2=="F")
+    {
+        fahr=document.getElementById("c").value * 9 / 5 + 32;
+        document.getElementById("f").value=Math.round(fahr);
+    }else if (temp=="C"  && temp2=="K")  
+    {
+        cels=document.getElementById("c").value * 1 + 273;
+        document.getElementById("f").value=Math.round(cels);
+    }else if (temp=="F"  && temp2=="C")  
+    {
+        cels=(document.getElementById("c").value -32) * 5 / 9;
+        document.getElementById("f").value=Math.round(cels);
+    }else if (temp=="F"  && temp2=="K")  
+    {
+        cels=(document.getElementById("c").value -32)/ 1.8 + 273;
+        document.getElementById("f").value=Math.round(cels);
+    } else  if (temp=="K"  && temp2=="C")
+	{
+		kel=document.getElementById("c").value * 1 - 273;
+        document.getElementById("f").value =Math.round(kel);
+	}else  if (temp=="K"  && temp2=="F")
+	{
+		kel=(document.getElementById("c").value - 273) * 1.8 + 32;
+        document.getElementById("f").value =Math.round(kel);
+		}
+}
+
+function input2() {
+	
+    temp = document.getElementById("chose1").value;
+	 temp2=document.getElementById("chose2").value;
+
+    if(temp2=="C" && temp=="F")
+    {
+        fahr=document.getElementById("f").value * 9 / 5 + 32;
+        document.getElementById("c").value=Math.round(fahr);
+    }else if (temp2=="C"  && temp=="K")  
+    {
+        cels=document.getElementById("f").value * 1 + 273;
+        document.getElementById("c").value=Math.round(cels);
+    }else if (temp2=="F"  && temp=="C")  
+    {
+        cels=(document.getElementById("f").value -32) * 5 / 9;
+        document.getElementById("c").value=Math.round(cels);
+    }else if (temp2=="F"  && temp=="K")  
+    {
+        cels=(document.getElementById("f").value -32)/ 1.8 + 273;
+        document.getElementById("c").value=Math.round(cels);
+    } else  if (temp2=="K"  && temp=="C")
+	{
+		kel=document.getElementById("f").value * 1 - 273;
+        document.getElementById("c").value =Math.round(kel);
+	}else  if (temp2=="K"  && temp=="F")
+	{
+		kel=(document.getElementById("f").value - 273) * 1.8 + 32;
+        document.getElementById("c").value =Math.round(kel);
+		}
+
+}
+</script>
+
+</head>
+<body>
+<h1>Convertidor de Temperatura</h1>
+<h2>Rafael Tamayo</h2>
+<br />
+<form>
+
+    <input id="c" name="c" onkeyup="input1()">
+    <select id="chose1">
+        <option value="C">Celsius</option>
+        <option value="F">Fahrenheit</option>
+        <option value="K">Kelvin</option>
+    </select>
+    <br />
+    <br />
+    <input id="f" name="f" onkeyup="input2()">
+    <select id="chose2">
+    	<option value="F">Fahrenheit</option>
+        <option value="C">Celsius</option>
+        <option value="K">Kelvin</option>
+    </select>
+</form>
+
+</body>
+</html>
